@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ChatLoginController">
+   <children>
+      <AnchorPane layoutY="-2.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F8F1E3;">
+         <children>
+            <ScrollPane layoutX="25.0" layoutY="73.0" prefHeight="227.0" prefWidth="549.0">
+               <content>
+                  <TextFlow fx:id="Mensagens" prefHeight="227.0" prefWidth="547.0" style="-fx-background-color: FCFBD9;" />
+               </content>
+            </ScrollPane>
+            <Rectangle fx:id="BarraVoip" arcHeight="5.0" arcWidth="5.0" fill="#51803d" height="44.0" layoutX="167.0" layoutY="19.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="267.0" />
+            <Text fx:id="CHAT_VOIP" layoutX="261.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chat: " textAlignment="CENTER" wrappingWidth="77.2578125">
+               <font>
+                  <Font name="Castellar" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="BtnSairChat" layoutX="15.0" layoutY="19.0" mnemonicParsing="false" onAction="#voltarParaLogin" prefHeight="44.0" prefWidth="46.0" style="-fx-background-color: #EAD5AC;" text="&lt;">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="BtnEnvio" layoutX="547.0" layoutY="339.0" mnemonicParsing="false" onAction="#enviarMensagem" opacity="0.61" prefHeight="44.0" prefWidth="39.0" style="-fx-background-color: #C4D49C;" text="&gt;&gt;">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="IconAnexo" fitHeight="30.0" fitWidth="39.0" layoutX="497.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/iconAnexo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="BtnArquivo" layoutX="489.0" layoutY="340.0" mnemonicParsing="false" onAction="#enviarArquivo" opacity="0.61" prefHeight="44.0" prefWidth="46.0" style="-fx-background-color: #C4D49C;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="InputMensagem" layoutX="56.0" layoutY="343.0" prefHeight="37.0" prefWidth="425.0" />
+            <ImageView fx:id="IconEmojis" fitHeight="37.0" fitWidth="39.0" layoutX="15.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/icon%20emoji.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="BtnEmoji" layoutX="15.0" layoutY="342.0" mnemonicParsing="false" onAction="#alternarVisibilidadeEmojis" opacity="0.61" prefHeight="37.0" prefWidth="37.0" rotate="90.0" style="-fx-background-color: #C4D49C;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="Lig_Des_Voip" fitHeight="37.0" fitWidth="39.0" layoutX="540.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/iconVoip.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="LigarDesligar_Voip" layoutX="535.0" layoutY="18.0" mnemonicParsing="false" onAction="#ligarDesligarVoip" opacity="0.61" prefHeight="44.0" prefWidth="46.0" style="-fx-background-color: #C4D49C;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="Mut_Desm_microphone" fitHeight="30.0" fitWidth="37.0" layoutX="179.0" layoutY="25.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/MicrophoneMute.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="mutarDesmutar_Microphone" layoutX="174.0" layoutY="22.0" mnemonicParsing="false" onAction="#mutarDesmutarMicrofone" opacity="0.0" prefHeight="37.0" prefWidth="46.0" style="-fx-background-color: #C4D49C;" />
+            <ImageView fx:id="Mut_Desm_phone" fitHeight="30.0" fitWidth="37.0" layoutX="388.0" layoutY="27.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/PhoneMute.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="MutarDesmutar_phone" layoutX="380.0" layoutY="23.0" mnemonicParsing="false" onAction="#mutarDesmutarTelefone" opacity="0.0" prefHeight="37.0" prefWidth="46.0" style="-fx-background-color: #C4D49C;" />
+            <Rectangle fx:id="BarraEmoji" arcHeight="5.0" arcWidth="5.0" fill="#1fff45" height="37.0" layoutX="45.0" layoutY="301.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="508.0" />
+            <ImageView fx:id="Emoji_beijo" fitHeight="85.0" fitWidth="30.0" layoutX="387.0" layoutY="307.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_beijo.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_sono" fitHeight="85.0" fitWidth="30.0" layoutX="50.0" layoutY="307.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_sono.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_enjoado" fitHeight="85.0" fitWidth="30.0" layoutX="221.0" layoutY="307.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_enjoado.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_bravo" fitHeight="85.0" fitWidth="30.0" layoutX="420.0" layoutY="307.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_bravo.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_feliz" fitHeight="85.0" fitWidth="30.0" layoutX="254.0" layoutY="307.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_feliz.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_shiu" fitHeight="85.0" fitWidth="30.0" layoutX="83.0" layoutY="307.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_shiu.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_gafe" fitHeight="85.0" fitWidth="30.0" layoutX="450.0" layoutY="307.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_gafe.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_florestal" fitHeight="27.0" fitWidth="30.0" layoutX="113.0" layoutY="307.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/emoji_florestal.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_machucado" fitHeight="85.0" fitWidth="30.0" layoutX="284.0" layoutY="307.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_machucado.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_like" fitHeight="85.0" fitWidth="30.0" layoutX="483.0" layoutY="307.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_like.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_nerd" fitHeight="85.0" fitWidth="30.0" layoutX="317.0" layoutY="307.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_nerd.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_risada" fitHeight="85.0" fitWidth="30.0" layoutX="146.0" layoutY="307.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_risada.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_OlhosCora" fitHeight="85.0" fitWidth="30.0" layoutX="520.0" layoutY="306.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_olhoCora.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_piscada" fitHeight="85.0" fitWidth="30.0" layoutX="354.0" layoutY="306.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_piscada.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Emoji_rico" fitHeight="85.0" fitWidth="30.0" layoutX="183.0" layoutY="306.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/EMOJIS_rico.PNG" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
